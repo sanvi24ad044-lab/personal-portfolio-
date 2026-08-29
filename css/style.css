@@ -1,0 +1,599 @@
+/* =========================================
+   ACCESSIBLE HTML5 PORTFOLIO
+   ========================================= */
+
+
+/* ---------- Variables ---------- */
+
+:root {
+
+    --text: #172033;
+
+    --muted: #4b5563;
+
+    --background: #ffffff;
+
+    --surface: #f4f7fb;
+
+    --primary: #174ea6;
+
+    --primary-dark: #0d3b82;
+
+    --border: #cbd5e1;
+
+    --focus: #111827;
+
+    --max-width: 1100px;
+
+}
+
+
+/* ---------- Basic Reset ---------- */
+
+* {
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    line-height: 1.6;
+
+    color: var(--text);
+
+    background: var(--background);
+
+}
+
+
+/* ---------- Links ---------- */
+
+a {
+
+    color: var(--primary);
+
+}
+
+
+a:hover {
+
+    color: var(--primary-dark);
+
+}
+
+
+/* ---------- Keyboard Focus ---------- */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+
+    outline: 3px solid var(--focus);
+
+    outline-offset: 3px;
+
+}
+
+
+/* ---------- Skip Link ---------- */
+
+.skip-link {
+
+    position: absolute;
+
+    left: -9999px;
+
+    top: 8px;
+
+    z-index: 999;
+
+    padding: 10px 14px;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    border: 2px solid #111827;
+
+    font-weight: 700;
+
+}
+
+
+.skip-link:focus {
+
+    left: 8px;
+
+}
+
+
+/* ---------- Container ---------- */
+
+.container {
+
+    width: min(92%, var(--max-width));
+
+    margin-inline: auto;
+
+}
+
+
+/* ---------- Header ---------- */
+
+.site-header {
+
+    background: #0f172a;
+
+    color: #ffffff;
+
+}
+
+
+.header-inner {
+
+    min-height: 72px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 24px;
+
+}
+
+
+.logo {
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 1.25rem;
+
+    font-weight: 700;
+
+}
+
+
+.logo:hover {
+
+    color: #ffffff;
+
+}
+
+
+/* ---------- Navigation ---------- */
+
+.nav-list {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px 20px;
+
+    list-style: none;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+
+.nav-list a {
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    padding: 8px;
+
+}
+
+
+.nav-list a[aria-current="page"] {
+
+    text-decoration: underline;
+
+    text-underline-offset: 4px;
+
+}
+
+
+/* ---------- Hero ---------- */
+
+.hero {
+
+    padding: 96px 0;
+
+    background: var(--surface);
+
+}
+
+
+.page-heading {
+
+    padding: 64px 0;
+
+    background: var(--surface);
+
+}
+
+
+.eyebrow {
+
+    margin: 0 0 10px;
+
+    color: var(--primary-dark);
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.08em;
+
+}
+
+
+h1,
+h2,
+h3 {
+
+    line-height: 1.2;
+
+}
+
+
+h1 {
+
+    margin: 0 0 20px;
+
+    font-size: clamp(
+        2.2rem,
+        5vw,
+        4rem
+    );
+
+}
+
+
+h2 {
+
+    margin-top: 0;
+
+    font-size: 2rem;
+
+}
+
+
+h3 {
+
+    font-size: 1.3rem;
+
+}
+
+
+/* ---------- Hero Text ---------- */
+
+.hero-text {
+
+    max-width: 700px;
+
+    font-size: 1.2rem;
+
+    color: var(--muted);
+
+}
+
+
+/* ---------- Buttons ---------- */
+
+.button-group {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 28px;
+
+}
+
+
+.button {
+
+    display: inline-block;
+
+    border: 2px solid var(--primary);
+
+    border-radius: 6px;
+
+    padding: 11px 18px;
+
+    background: var(--primary);
+
+    color: #ffffff;
+
+    font: inherit;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+}
+
+
+.button:hover {
+
+    background: var(--primary-dark);
+
+    border-color: var(--primary-dark);
+
+    color: #ffffff;
+
+}
+
+
+.button-secondary {
+
+    background: #ffffff;
+
+    color: var(--primary);
+
+}
+
+
+.button-secondary:hover {
+
+    color: #ffffff;
+
+}
+
+
+/* ---------- Sections ---------- */
+
+.section {
+
+    padding: 72px 0;
+
+}
+
+
+/* ---------- Cards ---------- */
+
+.card-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 24px;
+
+}
+
+
+.card {
+
+    padding: 24px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+}
+
+
+.card p {
+
+    color: var(--muted);
+
+}
+
+
+.project-type {
+
+    margin-top: 0;
+
+    color: var(--primary-dark) !important;
+
+    font-weight: 700;
+
+    font-size: 0.9rem;
+
+}
+
+
+/* ---------- Content ---------- */
+
+.content-narrow {
+
+    max-width: 760px;
+
+}
+
+
+/* ---------- Skills ---------- */
+
+.skill-list {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+
+    padding-left: 22px;
+
+}
+
+
+/* ---------- Form ---------- */
+
+form {
+
+    margin-top: 30px;
+
+}
+
+
+.form-group {
+
+    margin-bottom: 22px;
+
+}
+
+
+label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-weight: 700;
+
+}
+
+
+input,
+textarea {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: 2px solid var(--border);
+
+    border-radius: 6px;
+
+    background: #ffffff;
+
+    color: var(--text);
+
+    font: inherit;
+
+}
+
+
+textarea {
+
+    resize: vertical;
+
+}
+
+
+.field-help {
+
+    margin: 6px 0 0;
+
+    color: var(--muted);
+
+    font-size: 0.9rem;
+
+}
+
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+
+    padding: 28px 0;
+
+    background: #0f172a;
+
+    color: #ffffff;
+
+}
+
+
+.site-footer p {
+
+    margin: 0;
+
+}
+
+
+/* ---------- Responsive Design ---------- */
+
+@media (max-width: 760px) {
+
+    .header-inner {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        padding: 18px 0;
+
+    }
+
+
+    .nav-list {
+
+        gap: 6px 10px;
+
+    }
+
+
+    .hero {
+
+        padding: 70px 0;
+
+    }
+
+
+    .card-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .skill-list {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+/* ---------- Reduced Motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+
+        scroll-behavior: auto;
+
+    }
+
+}
